@@ -28,9 +28,9 @@ namespace BepInPluginSample
         public int windowId = 542;
         public Rect windowRect;
 
-        public string windowName = "";
-        public string FullName = "Plugin";
-        public string ShortName = "P";
+        public string windowName = ""; // 변수용 
+        public string FullName = "Plugin"; // 창 펼쳤을때
+        public string ShortName = "P"; // 접었을때
 
         GUILayoutOption h;
         GUILayoutOption w;
@@ -107,6 +107,7 @@ namespace BepInPluginSample
             if (!isGUIOn.Value)
                 return;
 
+            // 창 나가는거 방지
             windowRect.x = Mathf.Clamp(windowRect.x, -windowRect.width + 4, Screen.width - 4);
             windowRect.y = Mathf.Clamp(windowRect.y, -windowRect.height + 4, Screen.height - 4);
             windowRect = GUILayout.Window(windowId, windowRect, WindowFunction, windowName, w, h);
