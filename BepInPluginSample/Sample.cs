@@ -67,7 +67,7 @@ namespace BepInPluginSample
             logger.LogInfo($"IsOpen_SettingChanged {isOpen.Value} , {isGUIOn.Value},{windowRect.x} ");
             if (isOpen.Value)
             {
-                title = ShowCounter.Value.ToString();
+                title = ShowCounter.Value.ToString() + "," + ShowCounter2.Value.ToString();
                 h = GUILayout.Height(uiH.Value);
                 w = GUILayout.Width(uiW.Value);
                 windowName = FullName;
