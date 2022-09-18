@@ -29,6 +29,7 @@ namespace BepInPluginSample
         public int windowId = 542;
         public Rect windowRect;
 
+        public string title = "";
         public string windowName = ""; // 변수용 
         public string FullName = "Plugin"; // 창 펼쳤을때
         public string ShortName = "P"; // 접었을때
@@ -66,6 +67,7 @@ namespace BepInPluginSample
             logger.LogInfo($"IsOpen_SettingChanged {isOpen.Value} , {isGUIOn.Value},{windowRect.x} ");
             if (isOpen.Value)
             {
+                title = ShowCounter.Value.ToString();
                 h = GUILayout.Height(uiH.Value);
                 w = GUILayout.Width(uiW.Value);
                 windowName = FullName;
@@ -73,6 +75,7 @@ namespace BepInPluginSample
             }
             else
             {
+                title = "";
                 h = GUILayout.Height(40);
                 w = GUILayout.Width(60);
                 windowName = ShortName;
@@ -127,7 +130,7 @@ namespace BepInPluginSample
                                         // 라벨 추가
                                         //GUILayout.Label(windowName, GUILayout.Height(20));
                                         // 안쓰는 공간이 생기더라도 다른 기능으로 꽉 채우지 않고 빈공간 만들기
-            GUILayout.Label(title);
+            if (isOpen.Value) GUILayout.Label(title);
             GUILayout.FlexibleSpace();
 
             if (GUILayout.Button("-", GUILayout.Width(20), GUILayout.Height(20))) { isOpen.Value = !isOpen.Value; }
