@@ -38,9 +38,13 @@ namespace BepInPluginSample
         GUILayoutOption w;
         public Vector2 scrollPosition;
 
+        #region 변수
         // =========================================================
+
         // private static ConfigEntry<bool> hpNotChg;
         // private static ConfigEntry<float> uiW;
+
+        #endregion
 
         public void Awake()
         {
@@ -63,8 +67,12 @@ namespace BepInPluginSample
 
             IsOpen_SettingChanged(null, null);
 
+            #region 변수 설정
             // =========================================================
+
             // hpNotChg = Config.Bind("GUI", "hpNotChg", true);
+
+            #endregion
         }
 
         public void IsOpen_SettingChanged(object sender, EventArgs e)
@@ -151,12 +159,13 @@ namespace BepInPluginSample
             {
                 scrollPosition = GUILayout.BeginScrollView(scrollPosition, false, true);
 
-                // 여기에 항목 작성
+                #region 여기에 GUI 항목 작성
                 // =========================================================
 
                 // if (GUILayout.Button($"{hpNotChg.Value}")) { hpNotChg.Value = !hpNotChg.Value; }
 
                 // =========================================================
+                #endregion
 
                 GUILayout.EndScrollView();
             }
@@ -170,6 +179,7 @@ namespace BepInPluginSample
             harmony?.UnpatchSelf();
         }
 
+        #region Harmony
         // ====================== 하모니 패치 샘플 ===================================
         /*
          
@@ -193,5 +203,6 @@ namespace BepInPluginSample
         }
         */
         // =========================================================
+        #endregion
     }
 }
