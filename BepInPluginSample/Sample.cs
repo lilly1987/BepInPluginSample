@@ -39,8 +39,8 @@ namespace BepInPluginSample
         public Vector2 scrollPosition;
 
         // =========================================================
-        // private ConfigEntry<bool> hpNotChg;
-        // private ConfigEntry<float> uiW;
+        // private static ConfigEntry<bool> hpNotChg;
+        // private static ConfigEntry<float> uiW;
 
         public void Awake()
         {
