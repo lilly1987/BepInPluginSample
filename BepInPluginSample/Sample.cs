@@ -39,7 +39,7 @@ namespace BepInPluginSample
         public Vector2 scrollPosition;
 
         // =========================================================
-        // private ConfigEntry<bool> isOpen;
+        // private ConfigEntry<bool> hpNotChg;
         // private ConfigEntry<float> uiW;
 
         public void Awake()
@@ -64,6 +64,7 @@ namespace BepInPluginSample
             IsOpen_SettingChanged(null, null);
 
             // =========================================================
+            // hpNotChg = Config.Bind("GUI", "hpNotChg", true);
         }
 
         public void IsOpen_SettingChanged(object sender, EventArgs e)
@@ -153,7 +154,7 @@ namespace BepInPluginSample
                 // 여기에 항목 작성
                 // =========================================================
 
-
+                // if (GUILayout.Button($"{hpNotChg.Value}")) { hpNotChg.Value = !hpNotChg.Value; }
 
                 // =========================================================
 
