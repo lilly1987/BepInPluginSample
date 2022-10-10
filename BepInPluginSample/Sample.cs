@@ -38,6 +38,9 @@ namespace BepInPluginSample
         GUILayoutOption w;
         public Vector2 scrollPosition;
 
+        // =========================================================
+        // private ConfigEntry<bool> isOpen;
+        // private ConfigEntry<float> uiW;
 
         public void Awake()
         {
@@ -60,6 +63,7 @@ namespace BepInPluginSample
 
             IsOpen_SettingChanged(null, null);
 
+            // =========================================================
         }
 
         public void IsOpen_SettingChanged(object sender, EventArgs e)
@@ -147,6 +151,11 @@ namespace BepInPluginSample
                 scrollPosition = GUILayout.BeginScrollView(scrollPosition, false, true);
 
                 // 여기에 항목 작성
+                // =========================================================
+
+
+
+                // =========================================================
 
                 GUILayout.EndScrollView();
             }
