@@ -165,7 +165,7 @@ namespace BepInPluginSample
          
         [HarmonyPatch(typeof(XPPicker), MethodType.Constructor)]
         [HarmonyPostfix]
-        public static void XPPickerCtor(ref float ___pickupRadius)
+        public static void XPPickerCtor(XPPicker __instance, ref float ___pickupRadius)
         {
             //logger.LogWarning($"XPPicker.ctor {___pickupRadius}");
             ___pickupRadius = pickupRadius.Value;
