@@ -43,6 +43,7 @@ namespace BepInPluginSample
 
         // private static ConfigEntry<bool> hpNotChg;
         // private static ConfigEntry<float> uiW;
+        // private static ConfigEntry<float> xpMulti;
 
         #endregion
 
@@ -68,9 +69,11 @@ namespace BepInPluginSample
             IsOpen_SettingChanged(null, null);
 
             #region 변수 설정
+
             // =========================================================
 
-            // hpNotChg = Config.Bind("GUI", "hpNotChg", true);
+            // hpNotChg = Config.Bind("game", "hpNotChg", true);
+            // xpMulti = Config.Bind("game", "xpMulti", 2f);
 
             #endregion
         }
