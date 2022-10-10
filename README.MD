@@ -1,4 +1,14 @@
-﻿# 패키지 관리자 설정
+﻿### BepInEx 설치 필요 
+
+https://github.com/BepInEx/BepInEx/releases
+
+
+### 플러그인 dll 넣는 위치
+
+exe있는게임폴더\BepInEx\plugins
+
+
+# 패키지 관리자 설정
 
 "도구 - 패키지 관리자 - 설정 - 패키지 소스"에서 아래 링크 추가  
 https://nuget.bepinex.dev/v3/index.json  
