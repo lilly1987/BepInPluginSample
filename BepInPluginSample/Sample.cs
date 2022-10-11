@@ -47,6 +47,7 @@ namespace BepInPluginSample
         // private static ConfigEntry<float> uiW;
         // private static ConfigEntry<float> xpMulti;
 
+        // =========================================================
         #endregion
 
         public void Awake()
@@ -145,9 +146,11 @@ namespace BepInPluginSample
             windowRect.y = Mathf.Clamp(windowRect.y, -windowRect.height + 4, Screen.height - 4);
             windowRect = GUILayout.Window(windowId, windowRect, WindowFunction, windowName, w, h);
         }
+        #endregion
 
         public virtual void WindowFunction(int id)
         {
+            #region GUI
             GUI.enabled = true; // 기능 클릭 가능
 
             GUILayout.BeginHorizontal();// 가로 정렬
@@ -169,7 +172,7 @@ namespace BepInPluginSample
             else // 열렸을때
             {
                 scrollPosition = GUILayout.BeginScrollView(scrollPosition, false, true);
-
+                #endregion
                 #region 여기에 GUI 항목 작성
                 // =========================================================
 
@@ -177,13 +180,14 @@ namespace BepInPluginSample
 
                 // =========================================================
                 #endregion
-
+                #region GUI
                 GUILayout.EndScrollView();
             }
             GUI.enabled = true;
             GUI.DragWindow(); // 창 드레그 가능하게 해줌. 마지막에만 넣어야함
+            #endregion
         }
-        #endregion
+
 
         public void OnDisable()
         {
