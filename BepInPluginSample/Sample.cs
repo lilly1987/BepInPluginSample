@@ -14,6 +14,7 @@ namespace BepInPluginSample
     [BepInPlugin("Game.Lilly.Plugin", "Lilly", "1.0")]
     public class Sample : BaseUnityPlugin
     {
+        #region GUI
         public static ManualLogSource logger;
 
         static Harmony harmony;
@@ -37,6 +38,7 @@ namespace BepInPluginSample
         GUILayoutOption h;
         GUILayoutOption w;
         public Vector2 scrollPosition;
+        #endregion
 
         #region 변수
         // =========================================================
@@ -49,6 +51,7 @@ namespace BepInPluginSample
 
         public void Awake()
         {
+            #region GUI
             logger = Logger;
             Logger.LogMessage("Awake");
 
@@ -67,17 +70,20 @@ namespace BepInPluginSample
                 windowRect = new Rect(Screen.width - uiW.Value, 0, uiW.Value, 800);
 
             IsOpen_SettingChanged(null, null);
+            #endregion
 
             #region 변수 설정
-
             // =========================================================
+
 
             // hpNotChg = Config.Bind("game", "hpNotChg", true);
             // xpMulti = Config.Bind("game", "xpMulti", 2f);
 
+            // =========================================================
             #endregion
         }
 
+        #region GUI
         public void IsOpen_SettingChanged(object sender, EventArgs e)
         {
             logger.LogInfo($"IsOpen_SettingChanged {isOpen.Value} , {isGUIOn.Value},{windowRect.x} ");
@@ -98,7 +104,7 @@ namespace BepInPluginSample
                 windowRect.x += (uiW.Value - 64);
             }
         }
-
+        #endregion
 
         public void OnEnable()
         {
@@ -116,6 +122,7 @@ namespace BepInPluginSample
 
         public void Update()
         {
+            #region GUI
             if (ShowCounter.Value.IsUp())// 단축키가 일치할때
             {
                 isGUIOn.Value = !isGUIOn.Value;
@@ -124,9 +131,10 @@ namespace BepInPluginSample
             {
                 isOpen.Value = !isOpen.Value;
             }
+            #endregion
         }
 
-
+        #region GUI
         public void OnGUI()
         {
             if (!isGUIOn.Value)
@@ -175,6 +183,7 @@ namespace BepInPluginSample
             GUI.enabled = true;
             GUI.DragWindow(); // 창 드레그 가능하게 해줌. 마지막에만 넣어야함
         }
+        #endregion
 
         public void OnDisable()
         {
