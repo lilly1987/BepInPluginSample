@@ -76,7 +76,6 @@ namespace BepInPluginSample
             #region 변수 설정
             // =========================================================
 
-
             // hpNotChg = Config.Bind("game", "hpNotChg", true);
             // xpMulti = Config.Bind("game", "xpMulti", 2f);
 
