@@ -180,13 +180,21 @@ namespace BepInPluginSample
             {
                 scrollPosition = GUILayout.BeginScrollView(scrollPosition, false, true);
                 #endregion
+                
                 #region 여기에 GUI 항목 작성
                 // =========================================================
 
                 // if (GUILayout.Button($"{hpNotChg.Value}")) { hpNotChg.Value = !hpNotChg.Value; }
+                
+                // GUILayout.BeginHorizontal();
+                // GUILayout.Label($"ammoMulti {ammoMulti.Value}");
+                // if (GUILayout.Button("+", GUILayout.Width(20), GUILayout.Height(20))) { ammoMulti.Value += 1; }
+                // if (GUILayout.Button("-", GUILayout.Width(20), GUILayout.Height(20))) { ammoMulti.Value -= 1; }
+                // GUILayout.EndHorizontal();
 
                 // =========================================================
                 #endregion
+
                 #region GUI
                 GUILayout.EndScrollView();
             }
