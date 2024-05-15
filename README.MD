@@ -29,6 +29,7 @@ exe있는게임폴더\BepInEx\plugins
 
 - 넘버패드 + .(점) : 창 접기/펼치기
 - 넘버패드 + 0 : 창 켜기/끄기
+- 단축키 변경은 x64\Master\BepInEx\config\Game.Lilly.Plugin.cfg 열어서 isGUIOnKey = Keypad0 값을 적절히 수정
 
 ## 기능
 
